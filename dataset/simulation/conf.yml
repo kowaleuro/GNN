@@ -1,0 +1,5 @@
+dataset_name: results_mb_0025-0049
+rm_prev_results: n
+samples_per_file: 10
+threads: 6
+write_pkt_info: n

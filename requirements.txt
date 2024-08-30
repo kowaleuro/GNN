@@ -1,0 +1,9 @@
+networkx
+numpy
+matplotlib
+tensorflow==2.12.1
+pandas
+PyYAML
+tensorboard==2.12.3
+ipywidgets
+seaborn
