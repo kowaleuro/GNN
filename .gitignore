@@ -1,0 +1,5 @@
+data/
+.venv/
+__pycache__/
+functions/__pycache__/
+visualization/__pycache__
