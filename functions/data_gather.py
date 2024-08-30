@@ -5,8 +5,6 @@ import tensorflow as tf
 import numpy as np
 
 def data_gather(ds,model,max_count = 20):
-    if max_count > len(iter(ds)):
-        max_count = len(iter(ds))
     f = IntProgress(min=0, max=max_count,
         description='Loading:',
         bar_style='success',
@@ -40,11 +38,12 @@ def data_gather(ds,model,max_count = 20):
 def individual_prediction(model: tf.keras.Model, sample: any) -> np.ndarray:
     output = model(sample)
     gather = []
-    for data in output:
+    if isinstance(output,tuple):
+      for data in output:
         gather.append(data.numpy().reshape((-1,)).tolist())
     else:
         gather = [[]]
-    gather[0] += (output.numpy().reshape((-1,)).tolist())
+        gather[0] += (output.numpy().reshape((-1,)).tolist())
     return gather
 
 def getAvgPathLoad(sample):
