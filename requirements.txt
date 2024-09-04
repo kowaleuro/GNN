@@ -7,3 +7,4 @@ PyYAML
 tensorboard==2.12.3
 ipywidgets
 seaborn
+scikit-learn

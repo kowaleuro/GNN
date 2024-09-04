@@ -27,9 +27,9 @@ def data_gather(ds,model,max_count = 20):
                 original[increment] += labels[increment].numpy().tolist()
             except TypeError:
                 original[increment] += labels.numpy().tolist()
-            f.value += 1
-            if ii == max_count:
-                break
+        f.value += 1
+        if f.value == max_count:
+            break
 # -----------////////////-----------------
     return original,predicted,mean_load_list
     
